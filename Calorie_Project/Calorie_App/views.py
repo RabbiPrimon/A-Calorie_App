@@ -9,4 +9,11 @@ from django.contrib import messages
 
 def register_page(request):
 
-  return render (request, 'master/base-form.html')
+  form_data = RegistrationForm()
+  context = {
+    'form_data': form_data,
+    'form_title': 'User Registration Form',
+    'form_btn': 'Register',
+  }
+
+  return render (request, 'master/base-form.html',context)
